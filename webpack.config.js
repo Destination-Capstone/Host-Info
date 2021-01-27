@@ -1,6 +1,7 @@
 const path = require('path');
 const SRC_DIR = path.join(__dirname, '/Client/index.js');
 const OUT_DIR = path.join(__dirname, '/Public');
+const webpack = require('webpack');
 
 module.exports = {
   entry: SRC_DIR,
@@ -33,5 +34,10 @@ module.exports = {
           loader: 'url-loader?limit=100000' }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    })
+  ],
 }
