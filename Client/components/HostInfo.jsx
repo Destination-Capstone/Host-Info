@@ -48,7 +48,7 @@ const HostInfo = ({ host }) => {
         topic: msgTopic,
         message: msgBody,
       };
-      axios.put(`/email/${_id}`, body)
+      axios.put(`http://54.67.25.138:3001/email/${_id}`, body)
         .then((res) => {
           console.log(res);
           resetState();
